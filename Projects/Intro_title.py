@@ -1,20 +1,25 @@
 from tkinter import *
-import Transproj
+import Trans
+#from PIL import Image, ImageTk
 root =Tk()
 
 root.title("Transaltor")
 root.geometry("1080x400")
 
-label1=Label(root,text="LANGUAGE TRANSLATOR", font="segoe 30 bold", bg="white", width=18,bd=5,relief=GROOVE)
-label1.pack()
+canvas = Canvas(root, width=1080, height=400)
+canvas.pack()
+
+//
+img=PhotoImage(file="Background.png")
+canvas.create_image(0, 0, image=img, anchor='nw')
 
 
 def trans():
-    Transproj.main()
+    Trans.main()
     
     
-b1=Button(root, text="Open translator", bd=6, bg="red", command=trans)
-b1.pack()
+b1=Button(root, text="Open translator", bd=20, bg="red", command=trans)
+canvas.create_window(540,300,window=b1)
 
 
 root.mainloop()
