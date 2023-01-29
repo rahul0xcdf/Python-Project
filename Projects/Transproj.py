@@ -98,7 +98,8 @@ def main():
     label_change() 
 
 
-    root.configure(bg="pink")
+    root.configure(bg="light green")
 
 
     root.mainloop()
+    
